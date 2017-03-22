@@ -1,0 +1,30 @@
+# depslib dependency file v1.0
+1490137961 source:c:\users\gurce\documents\nas1\coding\guille\neural_network\main.cpp
+	"perceptron.h"
+	"parser.cpp"
+	<iostream>
+	<fstream>
+	<vector>
+
+1490137894 c:\users\gurce\documents\nas1\coding\guille\neural_network\perceptron.h
+	<Eigen/Dense>
+	<vector>
+
+1490137921 source:c:\users\gurce\documents\nas1\coding\guille\neural_network\perceptron.cpp
+	"perceptron.h"
+	<iostream>
+
+1489530319 c:\users\gurce\documents\nas1\coding\guille\neural_network\parser.cpp
+	<iostream>
+	<fstream>
+	<vector>
+	<cstdlib>
+	<sstream>
+
+1489530319 source:c:\users\gurce\documents\nas1\coding\guille\neural_network\parser.cpp
+	<iostream>
+	<fstream>
+	<vector>
+	<cstdlib>
+	<sstream>
+
