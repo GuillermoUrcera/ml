@@ -9,7 +9,7 @@ Eigen::Vector2d Perceptron::get_line() const{
     return A;
 }
 
-void Perceptron::set_weights(Eigen::Vector3d new_weights){
+void Perceptron::set_weights(Eigen::Vector3d &new_weights){
     for(char i=0;i<3;i++){
         this->weights[i]=new_weights[i];
     }
@@ -21,7 +21,9 @@ Perceptron::Perceptron(){
 
 void Perceptron::set_eta(float& new_eta){this->eta=new_eta;}
 
-virtual char Perceptron::activate(Eigen::Vector3d input)const{
+void Perceptron_tanh::set_eta(float& new_eta){this->eta=new_eta;}
+
+char Perceptron::activate(Eigen::Vector3d &input)const{
     if(this->weights.dot(input)>0){
         return 1;
     }
@@ -30,7 +32,7 @@ virtual char Perceptron::activate(Eigen::Vector3d input)const{
     }
 }
 
-unsigned long int Perceptron::learn(std::vector<std::vector<float> >data){
+unsigned long int Perceptron::learn(std::vector<std::vector<float> >&data){
     unsigned long int epoch=0;
     unsigned int correct=0;
     unsigned long int i=0;
@@ -53,4 +55,14 @@ unsigned long int Perceptron::learn(std::vector<std::vector<float> >data){
         if(correct==data.size())done=true;
     }
     return epoch;
+}
+
+//PERCEPTRON TANH FOR MLP FEEDFORWARD NN
+Perceptron_tanh::Perceptron_tanh(Eigen::VectorXd& initial_weights, float& initial_eta){
+    this->eta=initial_eta;
+    this->weights=initial_weights;
+}
+
+double Perceptron_tanh::activate(Eigen::VectorXd& input){
+
 }
