@@ -56,8 +56,12 @@ void Feedforward::forward_pass(Eigen::VectorXd& input){
     }catch(const char* msg){
         std::cerr<<msg<<std::endl;
     }
+    this->out[0]=input;
     for(unsigned int i=1;i<this->out.size();i++){
+        //std::cout<<"\nOUT "<<i<<" = "<<this->out[i]<<"\n";
         this->out[i]=((((this->weights[i]*this->out[i-1])+this->bias[i]).array()).tanh()).matrix();
+        //std::cout<<"OUT "<<i<<" = "<<this->out[i]<<"\n";
+        //std::cout<<"------------------------";
     }
 }
 
@@ -86,7 +90,6 @@ void Feedforward::backpropagation(Eigen::VectorXd& target){
 }
 
 float Feedforward::learn(Eigen::VectorXd& target, Eigen::VectorXd& input){
-    this->out[0]=input;
     this->forward_pass(input);
     this->backpropagation(target);
     return this->error(target);

@@ -8,7 +8,7 @@ private:
     std::vector<Eigen::VectorXd>deltas;
     std::vector<Eigen::VectorXd>out;
     std::vector<Eigen::VectorXd>bias;
-    float learning_rate;
+    float learning_rate=0.5;
 public:
     std::vector<Eigen::MatrixXd>get_weights()const;
     std::vector<Eigen::VectorXd>get_deltas()const;

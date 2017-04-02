@@ -35,7 +35,7 @@
 	<cstdlib>
 	<sstream>
 
-1491166655 source:c:\users\gurce\documents\nas1\coding\guille\ai_learning\main.cpp
+1491168036 source:c:\users\gurce\documents\nas1\coding\guille\ai_learning\main.cpp
 	"perceptron.h"
 	"parser.cpp"
 	"feedforward.h"
@@ -60,10 +60,10 @@
 	<math.h>
 	<iostream>
 
-1491167061 source:c:\users\gurce\documents\nas1\coding\guille\ai_learning\feedforward.cpp
+1491168176 source:c:\users\gurce\documents\nas1\coding\guille\ai_learning\feedforward.cpp
 	"feedforward.h"
 
-1491148528 c:\users\gurce\documents\nas1\coding\guille\ai_learning\feedforward.h
+1491168079 c:\users\gurce\documents\nas1\coding\guille\ai_learning\feedforward.h
 	<vector>
 	<Eigen/Dense>
 	<iostream>

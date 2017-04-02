@@ -79,33 +79,19 @@ int main(){
     targetVector.push_back(out0);
     int epoch=1;
     std::cout<<Eigen::VectorXd::Zero(z.size())<<"\n";
-    while(epoch<10000){
-        for(unsigned int i=1;i<4;i++){
-            std::cout<<"\ni ="<<i<<"\n";
-            std::cout<<"ERROR: "<<ff.learn(targetVector[i],inputVector[i])<<"\n";
+    while(epoch<1000000){
+        for(unsigned int i=0;i<4;i++){
+            //std::cout<<"\ni ="<<i<<"\n";
+            ff.learn(targetVector[i],inputVector[i]);
             std::cout<<"EPOCH: "<<epoch++<<"\n";
-            for(unsigned int j=0;j<z.size();j++){
-                //std::cout<<"\nWEIGHTS:\n"<<ff.get_weights()[j];
-                std::cout<<"\nBias:\n"<<ff.get_bias()[j]<<"\n";
-                //std::cout<<"\nDeltas:\n"<<ff.get_deltas()[j]<<"\n";
-                //std::cout<<"\nWeights:\n"<<ff.get_weights()[j]<<"\n";
-                //std::cout<<"\nOut:\n"<<ff.get_out()[j]<<"\n";
-            }
         }
     }
 
-    for(unsigned int i=1;i<4;i++){
+    for(unsigned int i=0;i<4;i++){
             std::cout<<"\n\ntesting...\n";
             ff.forward_pass(inputVector[i]);
             std::cout<<"input\n"<<inputVector[i]<<"\ngives: "<<ff.get_out().back();
             std::cout<<"\n when it should give: "<<targetVector[i]<<"\n";
-    }
-    for(int i=1;i<z.size();i++){
-        std::cout<<"\nFor "<<i<<":\n";
-        std::cout<<"\nBias:\n"<<ff.get_bias()[i]<<"\n";
-        std::cout<<"\nDeltas:\n"<<ff.get_deltas()[i]<<"\n";
-        std::cout<<"\nWeights:\n"<<ff.get_weights()[i]<<"\n";
-        std::cout<<"\nOut:\n"<<ff.get_out()[i]<<"\n";
     }
     return 0;
 }
