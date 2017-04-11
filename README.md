@@ -6,6 +6,7 @@
 * v0.1
 * Implemented features:
 * * Simple 2D perceptron
+* * Simple feedforward network
 
 ### How do I get set up? ###
 
