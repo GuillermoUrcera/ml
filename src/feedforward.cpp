@@ -1,5 +1,4 @@
 #include "feedforward.h"
-
 #define NGYUEN_WIDROW 0.7
 
 std::vector<Eigen::MatrixXd>Feedforward::get_weights()const{return this->weights;}
@@ -31,21 +30,26 @@ Feedforward::Feedforward(std::vector<int>& net_structure){
     Eigen::VectorXd results(net_structure[net_structure.size()-1]);
     this->out.push_back(results);
     //weights=weights/weights.norm()*beta_value
-    /*
     for(unsigned int i=1;i<net_structure.size();i++){
         // Initialize weight matrices with random variables
         Eigen::MatrixXd weight_i=Eigen::MatrixXd::Random(net_structure[i],net_structure[i-1]); // We add +1 column for the bias
         for(int j=0;j<weight_i.rows();j++){
             //weights=weights/weights.norm()*beta_value
-            weight_i.row(j)=weight_i.row(j)/((weight_i.row(j)).norm()*beta_value[i]);
+            weight_i.row(j)=weight_i.row(j)/((weight_i.row(j).norm()*beta_value[i-1]));
         }
         this->weights.push_back(weight_i);
     }
-    */
+// DEBUG
+/*
+for(int i=0;i<this->weights.size();i++){
+	std::cout<<"\n"<<this->weights[i]<<"\n";
+}
     for(unsigned int i=1;i<net_structure.size();i++){
         Eigen::MatrixXd weight_i=Eigen::MatrixXd::Random(net_structure[i],net_structure[i-1]); // We add +1 column for the bias
         this->weights.push_back(weight_i);
     }
+*/
+// GUBED
 }
 
 void Feedforward::forward_pass(Eigen::VectorXd& input){
