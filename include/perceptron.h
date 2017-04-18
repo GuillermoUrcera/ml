@@ -1,3 +1,6 @@
+#ifndef PERCEPTRON_H
+#define PERCEPTRON_H
+
 #include <Eigen/Dense>
 #include <vector>
 
@@ -28,4 +31,6 @@ public:
     void set_eta(float &new_eta);
     double activate(Eigen::VectorXd& input);
 };
+#endif
+
 

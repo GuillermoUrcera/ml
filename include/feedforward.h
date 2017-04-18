@@ -1,3 +1,6 @@
+#ifndef FEEDFORWARD_H
+#define FEEDFORWARD_H
+
 #include <vector>
 #include <Eigen/Dense>
 #include <iostream>
@@ -22,4 +25,5 @@ public:
     float error(Eigen::VectorXd& target)const;
     float learn(Eigen::VectorXd& target, Eigen::VectorXd& input);
 };
+#endif
 
